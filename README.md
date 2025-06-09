@@ -1,3 +1,7 @@
+first part: http://localhost:8081
+
+bonus: http://localhost:8081/bonus
+
 # Welcome to our coding task👋
 
 ## Get started
