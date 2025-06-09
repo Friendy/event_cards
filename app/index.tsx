@@ -1,26 +1,20 @@
 import { useEffect, useState } from "react";
-import * as Font from 'expo-font';
-import {
-  View,
-  Dimensions,
-  StyleSheet,
-  LayoutChangeEvent,
-} from "react-native";
-import Icon from "./icon";
+import * as Font from "expo-font";
+import { View, Dimensions, StyleSheet, LayoutChangeEvent } from "react-native";
 import EventCard from "./eventCard";
-import { useFonts, Lexend_700Bold } from '@expo-google-fonts/lexend';
+import { useFonts, Lexend_700Bold } from "@expo-google-fonts/lexend";
 // import AppLoading from 'expo-app-loading'; // or use SplashScreen from expo-router if applicable
 
 export default function App() {
   // console.log("s", Dimensions.get("screen"));
   // console.log("w", Dimensions.get("window"));
   const [fontsLoaded] = useFonts({
-    Lexend_700Bold
+    Lexend_700Bold,
   });
-const [loaded, setLoaded] = useState(false);
-    useEffect(() => {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
     Font.loadAsync({
-      'TimesNewRoman': require('../assets/fonts/times.ttf'),
+      TimesNewRoman: require("../assets/fonts/times.ttf"),
     }).then(() => setLoaded(true));
   }, []);
 
@@ -41,11 +35,15 @@ const [loaded, setLoaded] = useState(false);
 
   return (
     <View style={styles.column}>
-      <EventCard event = {dummyEvents[0]}/>
-      <EventCard event = {dummyEvents[1]}/>
-      <EventCard event = {dummyEvents[2]}/>
-      <EventCard event = {dummyEvents[3]}/>
-      <EventCard event = {dummyEvents[4]}/>
+      {/* <EventCard event = {dummyEvents[0]}/>
+      <EventCard event = {dummyEvents[1]}/> */}
+      <View style={styles.dummy} />
+      <View style={styles.dummy} />
+      <View style={styles.dummy} />
+      <View style={styles.dummy} />
+      {/* <EventCard event = {dummyEvents[2]}/>
+      <EventCard event = {dummyEvents[3]}/> */}
+      <EventCard event={dummyEvents[4]} />
     </View>
   );
 }
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#191F27",
     marginTop: 24,
     padding: 32,
-    gap: 12,
+    gap: 8,
     overflow: "hidden",
   },
   dummy: {
@@ -74,7 +72,7 @@ const styles = StyleSheet.create({
     gap: 4,
     // padding: 6,
     flexWrap: "wrap",
-    borderRadius: 20,
+    // borderRadius: 20,
     // borderBottomLeftRadius: 20,
     // borderBottomRightRadius: 20,
     // borderTopLeftRadius: 20,
