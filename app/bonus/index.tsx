@@ -14,7 +14,7 @@ export default function App() {
     const [loaded, setLoaded] = useState(false);
     useEffect(() => {
       Font.loadAsync({
-        TimesNewRoman: require("../assets/fonts/times.ttf"),
+        TimesNewRoman: require("../../assets/fonts/times.ttf"),
       }).then(() => setLoaded(true));
     }, []);
   
