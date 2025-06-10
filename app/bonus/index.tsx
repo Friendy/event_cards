@@ -3,25 +3,23 @@ import * as Font from "expo-font";
 import { Text, View, StyleSheet } from "react-native";
 import EventCard from "./eventCard";
 import { useFonts, Lexend_700Bold } from "@expo-google-fonts/lexend";
-// import AppLoading from 'expo-app-loading'; // or use SplashScreen from expo-router if applicable
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Lexend_700Bold,
-  });
-
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-    Font.loadAsync({
-      TimesNewRoman: require("../../assets/fonts/times.ttf"),
-    }).then(() => setLoaded(true));
-  }, []);
-
-  if (!loaded) return null;
-
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // }
+  //loading Lexend
+    const [fontsLoaded] = useFonts({
+      Lexend_700Bold,
+    });
+  
+    //loading TimesNewRoman
+    const [loaded, setLoaded] = useState(false);
+    useEffect(() => {
+      Font.loadAsync({
+        TimesNewRoman: require("../assets/fonts/times.ttf"),
+      }).then(() => setLoaded(true));
+    }, []);
+  
+    if (!loaded) return null;
+    if (!fontsLoaded) return null;
 
   const dummyEvents: { title: string; icon: string }[] = [];
 

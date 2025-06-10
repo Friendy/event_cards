@@ -9,7 +9,7 @@ const EventCard = ({event}: Props) => {
 
    const [CircleDiameter, setCircleDiameter] = useState(1);
 
-   let iconFontSize = CircleDiameter* 0.57;
+   let iconFontSize = CircleDiameter * 0.57;
 
 	const getSize = (e: LayoutChangeEvent) =>{
 		const { height } = e.nativeEvent.layout;

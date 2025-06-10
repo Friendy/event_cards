@@ -3,7 +3,6 @@ import * as Font from "expo-font";
 import { Text, View, StyleSheet } from "react-native";
 import EventCard from "./eventCard";
 import { useFonts, Lexend_700Bold } from "@expo-google-fonts/lexend";
-// import AppLoading from 'expo-app-loading'; // or use SplashScreen from expo-router if applicable
 
 export default function App() {
 
@@ -22,10 +21,6 @@ export default function App() {
 
   if (!loaded) return null;
   if (!fontsLoaded) return null;
-
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // }
 
   const dummyEvents: { title: string; icon: string }[] = [];
 
